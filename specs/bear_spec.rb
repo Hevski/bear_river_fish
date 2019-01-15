@@ -30,8 +30,7 @@ class TestBear < MiniTest::Test
  end
 # add a fish to the bears stomach
  def test_add_fish_to_bear_stomach
-   fish = @river.remove_fish
-   @bear.add_fish(fish)
+   @bear.add_fish(@river)
    assert_equal(1, @bear.count_fish_in_stomach)
  end
 

@@ -12,7 +12,8 @@ class Bear
     @stomach.length
   end
 
-  def add_fish(fish)
+  def add_fish(river)
+    fish = river.remove_fish
     @stomach.push(fish)
   end
 
