@@ -1,5 +1,6 @@
 require("minitest/autorun")
 require("minitest/rg")
+require("pry")
 
 require_relative("../Fish")
 require_relative("../River")
@@ -25,16 +26,18 @@ class TestBear < MiniTest::Test
  end
 # does the bear have an empty stomach?
  def test_bear_has_empty_stomach
-   assert_equal(0, @bear.count_fish_in_stomach())
+   assert_equal(0, @bear.count_fish_in_stomach)
  end
 # add a fish to the bears stomach
  def test_add_fish_to_bear_stomach
-   @bear.add_fish(@river)
+   fish = @river.remove_fish
+   @bear.add_fish(fish)
    assert_equal(1, @bear.count_fish_in_stomach)
  end
-# can the bear roar? 
+
+# can the bear roar?
  def test_bear_can_roar
-   assert_equal("ROOOOOAAAARRRRR", @bear.roar())
+   assert_equal("ROOOOOAAAARRRRR", @bear.roar)
  end
 
 
