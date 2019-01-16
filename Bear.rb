@@ -13,8 +13,15 @@ class Bear
   end
 
   def add_fish(river)
-    fish = river.remove_fish
-    @stomach.push(fish)
+    # fish = river.remove_fish
+    # @stomach.push(fish)
+    @stomach << river.remove_fish()
+  end
+
+  def eat_from(river)
+    if !river.fish_pop.empty?
+      @stomach << river.remove_fish()
+    end
   end
 
   def roar()
