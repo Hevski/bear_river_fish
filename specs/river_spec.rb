@@ -21,7 +21,7 @@ end
 # river loses fish to bear
 def test_river_loses_fish
   @river.remove_fish
-  assert_equal([@fish1, @fish2], @river.fish_pop)
+  assert_equal(2, @river.count_fish_in_river)
 end
 
 def test_count_fish_in_river
